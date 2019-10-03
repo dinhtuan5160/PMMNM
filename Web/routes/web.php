@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('index','PageController@getIndex');
+Route::get('trangchu','PageController@getTrangChu');

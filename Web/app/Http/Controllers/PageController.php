@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     //
-    public function getIndex(){
-    	return view('viewer.layout.index');
+  
+    public function getTrangChu(){
+    	return view('viewer.page.trangchu');
     }
 }

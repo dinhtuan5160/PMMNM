@@ -244,28 +244,13 @@
                     <div class="row align-items-center">
                         <div class="col-lg-4 col-md-4">
                             <div class="header_account">
-                                <ul>
-                                    <li class="language"><a href="#">Language : ENG  <i class="ion-chevron-down"></i></a>
-                                        <ul class="dropdown_language">
-                                            <li><a href="#">English</a></li>
-                                            <li><a href="#">Germany</a></li>
-                                            <li><a href="#">Japanese</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="currency"><a href="#">Currency : USD <i class="ion-chevron-down"></i></a>
-                                        <ul class="dropdown_currency">
-                                            <li><a href="#">EUR – Euro</a></li>
-                                            <li><a href="#">GBP – British Pound</a></li>
-                                            <li><a href="#">INR – India Rupee</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                                Ký túc xá số 1 - Trường đại học công nghiệp Hà Nội
                             </div>
                         </div>
                         <div class="col-lg-8 col-md-9">
                             <div class="top_right text-right">
                                 <div class="header_support">
-                                    <p><i class="icon ion-android-alarm-clock"></i> Ordered before 17:30, shipped today - Support: <a href="tel:+(012)800456789">(012) 800 456 789 </a></p>
+                                    <p><i class="icon ion-android-alarm-clock"></i> Mở cửa từ 6h -> 22h hằng ngày - Hỗ trợ: 0333116555 </p>
                                 </div>
                                 <div class="header_account">
                                     <ul>
