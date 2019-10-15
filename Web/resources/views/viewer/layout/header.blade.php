@@ -208,9 +208,7 @@
                                         <li><a href="404.html">Error 404</a></li>
                                     </ul>
                                 </li>
-                                <li class="menu-item-has-children">
-                                    <a href="my-account.html">my account</a>
-                                </li>
+
                                 <li class="menu-item-has-children">
                                     <a href="portfolio.html">portfolio</a>
                                 </li>
@@ -244,13 +242,13 @@
                     <div class="row align-items-center">
                         <div class="col-lg-4 col-md-4">
                             <div class="header_account">
-                                Ký túc xá số 1 - Trường đại học công nghiệp Hà Nội
+                               Trường đại học công nghiệp Hà Nội - Nhóm 1
                             </div>
                         </div>
                         <div class="col-lg-8 col-md-9">
                             <div class="top_right text-right">
                                 <div class="header_support">
-                                    <p><i class="icon ion-android-alarm-clock"></i> Mở cửa từ 6h -> 22h hằng ngày - Hỗ trợ: 0333116555 </p>
+                                    <p><i class="icon ion-android-alarm-clock"></i> Mở cửa 24h/7 hằng ngày - Hỗ trợ: 0382788384 </p>
                                 </div>
                                 <div class="header_account">
                                     <ul>

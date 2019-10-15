@@ -40,10 +40,10 @@
                         <div class="widgets_container contact_us">
                            <h3>Contacts us</h3>
                             <div class="footer_contact">
-                                <p><span>Address:</span> 123 Main Street, Anytown, CA 12345 - USA.</p>
-                                <p><span>Phone:</span> <a href="tel:(012)800456789">(012) 800 456 789</a></p>
-                                <p><span>Fax:</span> <a href="tel:(012)800456789">(012) 800 456 789</a></p>
-                                <p><span>Email:</span> <a href="#">demo@towerthemes.com</a></p>
+                                <p><span>Address:</span> Minh Khai - Từ Liêm - Hà Nội</p>
+                                <p><span>Phone:</span> <a href="tel:(012)800456789">012 3456 789</a></p>
+                                <p><span>Fax:</span> <a href="tel:(012)800456789">098 7654 321</a></p>
+                                <p><span>Email:</span> <a href="#">nhom1_pmmnm@gmail.com</a></p>
                                 
                             </div>
                              <div class="footer_payment">
