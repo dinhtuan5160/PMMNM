@@ -35,6 +35,6 @@ class SanPham extends Model
     }
     public function MauSacSanPham()
     {
-        return $this->hasMany('App\MauSacSanPham','id_sanpham','id');
+        return $this->belongsTo('App\MauSacSanPham','id_mausacsanpham','id');
     }
 }

@@ -4,7 +4,7 @@
     <div class="off_canvars_overlay">
                 
     </div>
-    <div class="Offcanvas_menu">
+    {{-- <div class="Offcanvas_menu">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -38,7 +38,7 @@
                         </div>
                         <div class="header_account bottom">
                             <ul>
-                                <li class="wishlist"><a href="wishlist.html"><i class="icon ion-clipboard"></i> Wishlist </a></li>
+                                <li class="wishlist"><a href="{{ route('quantri') }}"><i class="icon ion-clipboard"></i> Quản trị </a></li>
                                 <li class="top_links"><a href="#"><i class="ion-gear-a"></i> Setting <i class="ion-chevron-down"></i></a>
                                     <ul class="dropdown_links">
                                         <li><a href="checkout.html">Checkout </a></li>
@@ -231,7 +231,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!--Offcanvas menu area end-->
     
     <header>
@@ -255,6 +255,7 @@
                                         <li class="wishlist"><a href="wishlist.html"><i class="icon ion-clipboard"></i> Wishlist </a></li>
                                         <li class="top_links"><a href="#"><i class="ion-gear-a"></i> Setting <i class="ion-chevron-down"></i></a>
                                             <ul class="dropdown_links">
+                                                <li><a href="{{ route('quantri') }}">Quản trị</a></li>
                                                 <li><a href="checkout.html">Checkout </a></li>
                                                 <li><a href="my-account.html">My Account </a></li>
                                                 <li><a href="cart.html">Shopping Cart</a></li>

@@ -26,7 +26,7 @@ Route::get('loaisanpham/{id_theloai}','AjaxController@getLoaiSanPham');
 Route::group(['prefix'=>'admin'],function(){	
 	Route::group(['prefix'=>'theloai'],function(){
 		// admin/theloai/danhsach
-		Route::get('danhsach','TheLoaiController@getDanhSach');
+		Route::get('danhsach','TheLoaiController@getDanhSach')->name('quantri');
 
 		Route::get('xoa/{id}','TheLoaiController@getXoa');
 

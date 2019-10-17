@@ -17,10 +17,10 @@ class MauSacSanPham extends Model
     // {
     // 	return $this->belongsTo('App\SanPham','id_sanpham','id');
     // }
-    protected $table = "mausac";
+    protected $table = "mausacsanpham";
 
-    // public function MauSacSanPham()
-    // {
-    //     return $this->hasMany('App\MauSacSanPham','id_mausac','id');
-    // }
+    public function SanPham()
+    {
+        return $this->hasMany('App\SanPham','id_mausacsanpham','id');
+    }
 }
