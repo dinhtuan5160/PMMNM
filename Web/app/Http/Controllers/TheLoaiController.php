@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Theloai;
+use App\SanPham;
 
 class TheLoaiController extends Controller
 {
@@ -115,4 +116,11 @@ class TheLoaiController extends Controller
 
     // 	return redirect('admin/theloai/danhsach')->with('thongbao','Bạn đã xóa thành công');
     // }
+
+    public function getViewerDanhSach($id){
+        $dts_theloai = SanPham::where('id_theloai',$id)->where('trangthai',1)->paginate(8,['*'], 'page');
+        $the_loai = TheLoai::find($id);
+  
+        return view('viewer.theloai.danhsach',['dts_theloai'=>$dts_theloai,'the_loai'=>$the_loai]);
+    }
 }

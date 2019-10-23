@@ -4,6 +4,7 @@
 
 <!-- Mirrored from demo.hasthemes.com/rusu-preview/rusu/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Sep 2019 16:36:34 GMT -->
 <head>
+    <base href="{{asset('')}}">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     @yield('title')

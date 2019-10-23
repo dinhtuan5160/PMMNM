@@ -144,3 +144,5 @@ Route::group(['prefix'=>'admin'],function(){
 
 
 Route::get('trangchu','PageController@getTrangChu')->name('trang-chu');
+
+Route::get('theloai/{id}','TheLoaiController@getViewerDanhSach');

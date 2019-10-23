@@ -6,8 +6,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Thể loại
-                    <small>{{ $theloai->ten }}</small>
+                <h1 class="page-header">Sản phẩm
+                    <small>{{$sanpham->ten}}</small>
                 </h1>
             </div>
             <!-- /.col-lg-12 -->
@@ -26,23 +26,98 @@
                     </div>
                 @endif
                 
-                <form action="admin/theloai/sua/{{ $theloai->id }}" method="POST" enctype="multipart/form-data">
+                <form action="admin/sanpham/sua/{{ $sanpham->id }}" method="POST" enctype="multipart/form-data">
                 @CSRF
+                <div class="form-group">
+                        <label>Thể loại</label>
+                        <select class="form-control" name="theloai" id="TheLoai">
+                            @foreach($theloai as $tl)
+                                <option value="{{ $tl->id }}">{{$tl->ten}}</option>
+                            @endforeach
+                        </select>
+                    </div>     
                     <div class="form-group">
-                        <label>Tên thể loại</label>
-                        <input class="form-control" name="ten" placeholder="Điền tên thể loại" value="{{ $theloai->ten }}" />
+                        <label>Hệ điều hành</label>
+                        <select class="form-control" name="hedieuhanh" id="HeDieuHanh">
+                            @foreach($hedieuhanh as $h)
+                                <option value="{{ $h->id }}">{{$h->ten}}</option>
+                            @endforeach
+                        </select>
+                    </div>             
+                    <div class="form-group">
+                        <label>Tên sản phẩm</label>
+                        <input class="form-control" value="{{$sanpham->ten}}" name="ten" placeholder="Nhập tên sản phẩm" />
+                    </div>     
+                    <div class="form-group">
+                        <label>Chon hình ảnh</label>
+                        <p><img src="upload/sanpham/{{$sanpham->hinhanh}}" width:300px; height:300px alt=""></p>
+                        <input type="file" name="hinhanh" class="form-control" value="{{$sanpham->hinhanh}}"/>
+                        
                     </div>
                     <div class="form-group">
-                        <label>Chọn hình ảnh</label>
-                        <p>
-                        <img src="upload/theloai/{{ $theloai->hinhanh }}" width="300px">
-                        </p>
-                        <input type="file" name="hinhanh" class="form-control" />
+                        <label>Màn hình</label>
+                        <input class="form-control" value="{{$sanpham->manhinh}}" name="manhinh" placeholder="Nhập màn hình" />
+                    </div> 
+                    <div class="form-group">
+                        <label>Camera trước</label>
+                        <input class="form-control" value="{{$sanpham->camera_truoc}}" name="camera_truoc" placeholder="Nhập camera trước" />
+                    </div> 
+                    <div class="form-group">
+                        <label>Camera sau</label>
+                        <input class="form-control" value="{{$sanpham->camera_sau}}" name="camera_sau" placeholder="Nhập camera sau" />
                     </div>
                     <div class="form-group">
-                        <label>Ghi chú</label>
-                        <input class="form-control" name="ghichu" placeholder="Nhập ghi chú" value="{{ $theloai->ghichu }}" />
-                    </div>                 
+                        <label>CPU</label>
+                        <input class="form-control" value="{{$sanpham->cpu}}" name="cpu" placeholder="Nhập CPU" />
+                    </div>
+                    <div class="form-group">
+                        <label>Dung lượng pin</label>
+                        <input class="form-control" value="{{$sanpham->dungluongpin}} " name="dungluongpin" placeholder="Nhập dung lượng pin" />
+                    </div>
+                    <div class="form-group">
+                        <label>Trọng lượng</label>
+                        <input class="form-control" value="{{$sanpham->trongluong}}" name="trongluong" placeholder="Nhập trọng lượng" />
+                    </div>
+                    <div class="form-group">
+                        <label>Độ phân giải</label>
+                        <input class="form-control" value="{{$sanpham->dophangiai_manhinh}}" name="dophangiai_manhinh" placeholder="Nhập độ phân giải màn hình" />
+                    </div>
+                    <div class="form-group">
+                        <label>Kích thước</label>
+                        <input class="form-control" value="{{$sanpham->kichthuoc}}" name="kichthuoc" placeholder="Nhập kích thước" />
+                    </div>
+                    <div class="form-group">
+                        <label>GPS</label>
+                        <input class="form-control" value="{{$sanpham->gps}}" name="gps" placeholder="Nhập GPS" />
+                    </div>
+                    <div class="form-group">
+                        <label>Bluetooth</label>
+                        <input class="form-control" value="{{$sanpham->bluetooth}}" name="bluetooth" placeholder="Nhập bluetooth" />
+                    </div>
+                    <div class="form-group">
+                        <label>Màu sắc sản phẩm</label>
+                        <select class="form-control" name="mausacsanpham" id="MauSac">
+                            @foreach($mausacsanpham as $m)
+                                <option value="{{ $m->id }}">{{$m->ten}}</option>
+                            @endforeach
+                        </select>
+                    </div>   
+                    <div class="form-group">
+                        <label>Ram</label>
+                        <select class="form-control" name="ram" id="Ram">
+                            @foreach($ram as $r)
+                                <option value="{{ $r->id }}">{{$r->ten}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Bộ nhớ trong</label>
+                        <select class="form-control" name="bonhotrong" id="BoNhotrong">
+                            @foreach($bonhotrong as $bnt)
+                                <option value="{{ $r->id }}">{{$bnt->ten}}</option>
+                            @endforeach
+                        </select>
+                    </div>                             
                     <div class="form-group">
                         <label>Trạng thái</label>
                         <label class="radio-inline">

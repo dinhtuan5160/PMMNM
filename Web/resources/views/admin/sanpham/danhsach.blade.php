@@ -24,16 +24,16 @@
                         <th>ID</th>
                         <th>Tên thể loại</th>
                         <th>Hình ảnh</th>
-                        <th>Màn hình</th>
-                        <th>Camera trước</th>
-                        <th>Camera sau</th>
+                        <!-- <th>Màn hình</th> -->
+                        <!-- <th>Camera trước</th> -->
+                        <!-- <th>Camera sau</th> -->
                         <th>CPU</th>
                         <th>Dung lượng pin</th>
                         <th>Trọng lượng</th>
-                        <th>Độ phân giải màn hình</th>
-                        <th>Kích thước</th>
-                        <th>GPS</th>
-                        <th>Bluetooth</th>
+                        <!-- <th>Độ phân giải màn hình</th> -->
+                        <!-- <th>Kích thước</th> -->
+                        <!-- <th>GPS</th> -->
+                        <!-- <th>Bluetooth</th> -->
                         <th>Hệ điều hành</th>
                         <th>Màu sắc</th>
                         <th>Ram</th>
@@ -49,16 +49,16 @@
                         <td>
                         <img width="100px" height="100px" src="upload/sanpham/{{$sp->hinhanh}}">
                            </td>
-                        <td>{{ $sp->manhinh }}</td>
-                        <td>{{ $sp->camera_truoc }}</td>
-                        <td>{{ $sp->camera_sau }}</td>
+                        <!-- <td>{{ $sp->manhinh }}</td> -->
+                        <!-- <td>{{ $sp->camera_truoc }}</td> -->
+                        <!-- <td>{{ $sp->camera_sau }}</td> -->
                         <td>{{ $sp->cpu }}</td>
                         <td>{{ $sp->dungluongpin }}</td>
                         <td>{{ $sp->trongluong }}</td>
-                        <td>{{ $sp->dophangiai_manhinh }}</td>
-                        <td>{{ $sp->kichthuoc }}</td>
-                        <td>{{ $sp->gps }}</td>
-                        <td>{{ $sp->bluetooth }}</td>
+                        <!-- <td>{{ $sp->dophangiai_manhinh }}</td> -->
+                        <!-- <td>{{ $sp->kichthuoc }}</td> -->
+                        <!-- <td>{{ $sp->gps }}</td> -->
+                        <!-- <td>{{ $sp->bluetooth }}</td> -->
                         <td>{{ $sp->hedieuhanh->ten }}</td>
                         <td>{{ $sp->mausacsanpham->ten }}</td>
                         <td>{{ $sp->ram->ten }}</td>
