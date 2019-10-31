@@ -98,7 +98,12 @@
                         <label>Màu sắc sản phẩm</label>
                         <select class="form-control" name="mausacsanpham" id="MauSac">
                             @foreach($mausacsanpham as $m)
-                                <option value="{{ $m->id }}">{{$m->ten}}</option>
+                                <!-- <option value="{{ $m->id }}">{{$m->ten}}</option> -->
+                                <option 
+                                @if($sanpham->mausacsanpham->id == $m->id)
+                                    {{ "selected" }}
+                                @endif
+                                value="{{$m->id}}">{{$m->ten}}</option>
                             @endforeach
                         </select>
                     </div>   
@@ -106,15 +111,24 @@
                         <label>Ram</label>
                         <select class="form-control" name="ram" id="Ram">
                             @foreach($ram as $r)
-                                <option value="{{ $r->id }}">{{$r->ten}}</option>
+                                <!-- <option value="{{ $r->id }}">{{$r->ten}}</option> -->
+                                <option 
+                                @if($sanpham->ram->id == $r->id)
+                                    {{ "selected" }}
+                                @endif
+                                value="{{$r->id}}">{{$r->ten}}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Bộ nhớ trong</label>
                         <select class="form-control" name="bonhotrong" id="BoNhotrong">
-                            @foreach($bonhotrong as $bnt)
-                                <option value="{{ $r->id }}">{{$bnt->ten}}</option>
+                            @foreach($ram as $r)
+                                <option
+                                @if($sanpham->bonhotrong->id == $r->id)
+                                    {{ "selected" }}
+                                @endif
+                                value="{{$r->id}}">{{$r->ten}}</option>
                             @endforeach
                         </select>
                     </div>                             

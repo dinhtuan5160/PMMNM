@@ -204,12 +204,12 @@ class SanPhamController extends Controller
     }
 
     public function getXoa($id){
-    	$loaisanpham = LoaiSanPham::find($id);
+    	$sanpham = SanPham::find($id);
 
-    	$loaisanpham->trangthai = 0;
-    	$loaisanpham->save();
+    	$sanpham->trangthai = 0;
+    	$sanpham->save();
 
-    	return redirect('admin/loaisanpham/danhsach')->with('thongbao','Bạn đã xóa thành công');
+    	return redirect('admin/sanpham/danhsach')->with('thongbao','Bạn đã xóa thành công');
     }
     
     // public function getXoa($id){
