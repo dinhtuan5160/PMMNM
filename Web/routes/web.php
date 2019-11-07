@@ -146,3 +146,13 @@ Route::group(['prefix'=>'admin'],function(){
 Route::get('trangchu','PageController@getTrangChu')->name('trang-chu');
 
 Route::get('theloai/{id}','TheLoaiController@getViewerDanhSach');
+
+Route::group(['prefix'=>'cart'],function(){
+	Route::get('add/{id}','CartController@getAddCart')->name('add-cart');
+
+	Route::get('delete/{id}','CartController@getDeleteCart')->name('delete-cart');
+
+	Route::get('show','CartController@getShowCart')->name('show-cart');
+
+	Route::get('dathang','CartController@getDatHang')->name('dat-hang');
+});

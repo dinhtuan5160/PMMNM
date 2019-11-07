@@ -85,7 +85,7 @@
                                                     <span class="label_sale">Sale!</span>
                                                 </div>
                                                 <div class="quick_button">
-                                                    <a href="#" data-toggle="modal" data-target="#modal_box"  title="quick view"> Xem nhanh</a>
+                                                    <a href="#" data-toggle="modal" data-target="#modal_box"  title="Xem nhanh"> Xem nhanh</a>
                                                 </div>
                                             </div>
                                             <div class="product_footer">
@@ -96,7 +96,7 @@
                                                 </div>
                                                 <div class="action_links">
                                                      <ul>
-                                                        <li class="add_to_cart"><a href="cart.html" title="Add to cart">Thêm vào giỏ hàng</a></li>
+                                                        <li class="add_to_cart"><a href="{{route('add-cart',$dt_moinhat->id)}}" title="Chọn mua">Thêm vào giỏ hàng</a></li>
 
                                                         <li class="wishlist"><a href="wishlist.html"  title="Yêu thích"><i class="ion-android-favorite-outline"></i></a></li>
 
@@ -149,7 +149,7 @@
                                                     <span class="label_sale">Sale!</span>
                                                 </div>
                                                 <div class="quick_button">
-                                                    <a href="#" data-toggle="modal" data-target="#modal_box"  title="quick view"> Quick View</a>
+                                                    <a href="#" data-toggle="modal" data-target="#modal_box"  title="Xem nhanh"> Quick View</a>
                                                 </div>
                                             </div>
                                             <div class="product_content">
@@ -171,7 +171,7 @@
                                                 </div>
                                                 <div class="action_links">
                                                      <ul>
-                                                        <li class="add_to_cart"><a href="cart.html" title="Add to cart">Add to cart</a></li>
+                                                        <li class="add_to_cart"><a href="#" title="Thêm vào giỏ hàng">Thêm vào giỏ hàng</a></li>
 
                                                         <li class="wishlist"><a href="wishlist.html"  title="Add to Wishlist"><i class="ion-android-favorite-outline"></i></a></li>
 
@@ -216,7 +216,7 @@
                                                             </div>
                                                             <div class="action_links">
                                                                  <ul>
-                                                                    <li class="add_to_cart"><a href="cart.html" title="Add to cart">Add to cart</a></li>
+                                                                 <li class="add_to_cart"><a href="#" title="Thêm vào giỏ hàng">Thêm vào giỏ hàng</a></li>
 
                                                                     <li class="wishlist"><a href="wishlist.html"  title="Add to Wishlist"><i class="ion-android-favorite-outline"></i></a></li>
 
@@ -259,7 +259,7 @@
                                                             </div>
                                                             <div class="action_links">
                                                                  <ul>
-                                                                    <li class="add_to_cart"><a href="cart.html" title="Add to cart">Add to cart</a></li>
+                                                                 <li class="add_to_cart"><a href="#" title="Thêm vào giỏ hàng">Thêm vào giỏ hàng</a></li>
 
                                                                     <li class="wishlist"><a href="wishlist.html"  title="Add to Wishlist"><i class="ion-android-favorite-outline"></i></a></li>
 
@@ -1833,7 +1833,7 @@
                                                 </div>
                                                 <div class="action_links">
                                                      <ul>
-                                                        <li class="add_to_cart"><a href="cart.html" title="Add to cart">Thêm vào giỏ hàng</a></li>
+                                                        <li class="add_to_cart"><a href="{{route('add-cart',$dt_pinkhung->id)}}" title="Chọn mua">Thêm vào giỏ hàng</a></li>
 
                                                         <li class="wishlist"><a href="wishlist.html"  title="Yêu thích"><i class="ion-android-favorite-outline"></i></a></li>
 

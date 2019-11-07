@@ -402,52 +402,47 @@
                                     </form>
                                 </div>
                                 <div class="mini_cart_wrapper">
-                                    <a href="javascript:void(0)">
+                                    <a href="javascript:void(0)" style="width:110%;">
                                        <span class="cart_icon">
                                            <i class="ion-android-cart"></i>
                                        </span>
-                                        <span class="cart_title">
-                                            <span class="cart_quantity">2 items	</span>
-                                            <span class="cart_price">$152.00</span>
-                                        </span>
+                                       @if(Cart::count()>0)
+                                            <span class="cart_title">
+                                                <span class="cart_quantity">{{Cart::count()}} sản phẩm</span>
+                                                <span class="cart_price">{{$total}}<sup>đ</sup></span>
+                                            </span>
+                                        @else
+                                            <span class="cart_title">
+                                                <span class="cart_quantity">Giỏ hàng rỗng</span>
+                                                
+                                            </span>
+                                        @endif
                                     </a>
 
                                     <!--mini cart-->
+                                    @if(Cart::count() > 0)
                                      <div class="mini_cart">
                                         <div class="mini_cart_inner">
-                                            <div class="cart_item">
-                                               <div class="cart_img">
-                                                   <a href="#"><img src="asset/assets/img/s-product/product.jpg" alt=""></a>
-                                               </div>
-                                                <div class="cart_info">
-                                                    <a href="#">Sit voluptatem rhoncus sem lectus</a>
-                                                    <p>Qty: 1 X <span> $60.00 </span></p>    
+                                             @foreach($data as $dt)  
+                                                <div class="cart_item">
+                                                <div class="cart_img">
+                                                    <a href="#"><img src="upload/sanpham/{{$dt->options->img}}" alt=""></a>
                                                 </div>
-                                                <div class="cart_remove">
-                                                    <a href="#"><i class="ion-android-close"></i></a>
+                                                    <div class="cart_info">
+                                                        <a href="#">{{$dt->name}}</a>
+                                                        <p>Số lượng: {{$dt->qty}} X <span> {{number_format($dt->price)}}<sup>đ</sup> </span></p>   
+                                                    </div>
+                                                    <div class="cart_remove">
+                                                        <a href="{{route('delete-cart',$dt->rowId)}}"><i class="ion-android-close"></i></a>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="cart_item">
-                                               <div class="cart_img">
-                                                   <a href="#"><img src="asset/assets/img/s-product/product2.jpg" alt=""></a>
-                                               </div>
-                                                <div class="cart_info">
-                                                    <a href="#">Natus erro at congue massa commodo</a>
-                                                    <p>Qty: 1 X <span> $60.00 </span></p>   
-                                                </div>
-                                                <div class="cart_remove">
-                                                    <a href="#"><i class="ion-android-close"></i></a>
-                                                </div>
-                                            </div>
+                                            @endforeach
                                             <div class="mini_cart_table">
                                                 <div class="cart_total">
-                                                    <span>Sub total:</span>
-                                                    <span class="price">$138.00</span>
+                                                    <span>Tổng tiền:</span>
+                                                    <span class="price">{{$total}}<sup>đ</sup></span>
                                                 </div>
-                                                <div class="cart_total mt-10">
-                                                    <span>total:</span>
-                                                    <span class="price">$138.00</span>
-                                                </div>
+                                                
                                             </div>
                                         </div>
                                         <div class="mini_cart_footer">
@@ -461,6 +456,7 @@
                                         </div>
 
                                     </div>
+                                    @endif
                                     <!--mini cart end-->
                                 </div>
                             </div>
