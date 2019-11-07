@@ -31,7 +31,7 @@ class SanPham extends Model
     }
     public function BoNhoTrong()
     {
-    	return $this->belongsTo('App\BoNhoTrong','id_bonhotrong','id');
+    	return $this->belongsTo('App\Ram','id_bonhotrong','id');
     }
     public function MauSacSanPham()
     {

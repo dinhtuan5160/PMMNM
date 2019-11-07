@@ -17,3 +17,5 @@ class PageController extends Controller
     	return view('viewer.page.trangchu',['dts_moinhat'=>$dts_moinhat,'dts_pinkhung'=>$dts_pinkhung]);
     }
 }
+
+?>
