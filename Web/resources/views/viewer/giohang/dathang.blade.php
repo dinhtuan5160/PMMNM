@@ -34,27 +34,40 @@
             <div class="checkout_form">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <form action="#">
+                        <form action="{{route('post-dh')}}" method="post">
+                            @CSRF
                             <h3>Địa chỉ giao hàng</h3>
-                            <div class="row">
 
+                            
+                            <div class="row">
                                 <div class="col-10 mb-20">
-                                    <label>Họ và tên <span>*</span></label>
-                                    <input type="text">    
+                                @if(count($errors) > 0)
+                            <div class="alert alert-danger">
+                                @foreach($errors->all() as $err)
+                                    {{ $err }}<br>
+                                @endforeach
+                            </div>
+                            @endif
+                            @if(session('thongbao'))      
+                            <div class="alert alert-success">                
+                                    {{session('thongbao')}}
+                            </div>
+                            
+                            @endif
+                                </div>
+                                <div class="col-10 mb-20">
+                                    <label>Họ tên người nhận <span>*</span></label>
+                                    <input type="text" name="hoten">    
                                 </div>
                                 
-                                <div class="col-10 mb-20">
-                                    <label>Email<span>*</span></label>
-                                    <input type="text">     
-                                </div>
                                 <div class="col-lg-6 mb-20">
                                     <label>Số điện thoại<span>*</span></label>
-                                    <input type="text"> 
+                                    <input type="text" name="sdt"> 
 
                                 </div> 
                                  <div class="col-lg-10 mb-20">
                                     <label>Địa chỉ nhận hàng<span>*</span></label>
-                                      <input type="text"> 
+                                      <input type="text" name="diachi"> 
 
                                 </div> 
                                 
@@ -62,11 +75,11 @@
                                 <div class="col-12">
                                     <div class="order-notes">
                                          <label for="order_note">Ghi chú</label>
-                                        <textarea id="order_note" placeholder="Bạn có thể ghi chú thêm"></textarea>
+                                        <textarea id="order_note" placeholder="Bạn có thể ghi chú thêm" name="ghichu"></textarea>
                                     </div>    
                                 </div>     	    	    	    	    	    	    
                             </div>
-                            <button type="button" class="btn btn-success" style="margin-left:550px;margin-top:50px;">Đặt hàng</button>
+                            <button type="submit" class="btn btn-success" style="margin-left:550px;margin-top:50px;">Đặt hàng</button>
                         </form>    
                     </div>
                     <div class="col-lg-6 col-md-6">

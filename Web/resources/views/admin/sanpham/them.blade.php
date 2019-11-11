@@ -29,6 +29,11 @@
                         {{ session('thongbao') }}
                     </div>
                 @endif
+                @if(session('saifile'))
+                    <div class="alert alert-danger">
+                        {{ session('saifile') }}
+                    </div>
+                @endif
                     @CSRF 
                     <div class="form-group">
                         <label>Thể loại</label>

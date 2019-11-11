@@ -252,14 +252,21 @@
                                 </div>
                                 <div class="header_account">
                                     <ul>
-                                        <li class="wishlist"><a href="#"><i class="icon ion-clipboard"></i> Đăng nhập </a></li>
+                                        
+                                        
                                         <li class="top_links"><a href="#"><i class="ion-gear-a"></i> Setting <i class="ion-chevron-down"></i></a>
                                             <ul class="dropdown_links">
+                                                @if(Auth::check())
+                                                @if(Auth::user()->role==1)
                                                 <li><a href="{{ route('quantri') }}">Quản trị</a></li>
-                                                <li><a href="checkout.html">Checkout </a></li>
-                                                <li><a href="my-account.html">My Account </a></li>
-                                                <li><a href="cart.html">Shopping Cart</a></li>
-                                                <li><a href="wishlist.html">Wishlist</a></li>
+                                                @endif
+                                                <li><a href="{{route('get-doi')}}">Đổi mật khẩu</a></li>
+                                                <li><a href="logout">Đăng xuất </a></li>
+                                                
+                                                @else
+                                                <li class="wishlist"><a href="login"><i class="icon ion-clipboard"></i> Đăng nhập </a></li>
+                                                <li class="wishlist"><a href="{{route('get-dk')}}"> Đăng kí </a></li>
+                                                @endif
                                             </ul>
                                         </li>
 

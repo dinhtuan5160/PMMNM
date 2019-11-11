@@ -15,9 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('admin/dangnhap/','UserController@getDangNhapAdmin')->name('loginAdmin');
-Route::post('admin/dangnhap','UserController@postDangNhapAdmin')->name('loginAdmin');
-Route::get('admin/logout','UserController@getDangXuatAdmin')->name('logout');
+Route::get('login','UserController@getDangNhap');
+Route::post('login','UserController@postDangNhap')->name('post-login');
+Route::get('logout','UserController@getDangXuat')->name('logout');
 
 
 //,'middleware'=>'adminLogin'
@@ -156,7 +156,23 @@ Route::group(['prefix'=>'cart'],function(){
 
 	Route::get('show','CartController@getShowCart')->name('show-cart');
 
-	Route::get('dathang','CartController@getDatHang')->name('dat-hang');
+	
 
 	Route::get('update','CartController@getUpdateCart');
 });
+
+Route::group(['prefix'=>'dathang'],function(){
+	Route::get('dathang','CartController@getDatHang')->name('dat-hang');
+
+	Route::post('dathang','CartController@postDatHang')->name('post-dh');
+});
+
+Route::get('doimatkhau','UserController@getDMK')->name('get-doi');
+
+Route::post('doimat','UserController@postDMK')->name('post-dmk');
+
+Route::get('logout','UserController@getDangXuat');
+
+Route::get('dangki','UserController@getDangKi')->name('get-dk');
+
+Route::post("dangkimoi",'UserController@postDangKi')->name('post-dk');

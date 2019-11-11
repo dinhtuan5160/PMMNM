@@ -153,27 +153,30 @@ class UserController extends Controller
     	return redirect('admin/user/danhsach')->with('thongbao','Xóa người dùng thành công');
     }
 
-    public function getDangNhapAdmin(){
-        return view('admin.login');
+    public function getDangNhap(){
+        return view('login');
     }
 
-    public function postDangNhapAdmin(Request $request){
+    public function postDangNhap(Request $request){
+        
         $this->validate($request,[
-            'email'=>'required',
-            'password'=>'required|min:3|max:32'
+            'username'=>'required',
+            'pass'=>'required|min:3|max:32'
         ],[
-            'email.required'=>'Bạn chưa nhập Email',
-            'password.required'=>'Bạn chưa nhập Password',
-            'password.min'=>'Password không được nhỏ hơn 3 kí tự',
-            'password.max'=>'Passwordư không được quá 32 kí tự'
+            'username.required'=>'Bạn chưa nhập Email',
+            'pass.required'=>'Bạn chưa nhập Password',
+            'pass.min'=>'Password không được nhỏ hơn 3 kí tự',
+            'pass.max'=>'Passwordư không được quá 32 kí tự'
         ]);
-
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            if (Auth::user()->isAdmin()) {
-                return redirect()->route('trang-chu')->with('thongbao','Bạn đã đăng nhập thành công với tư cách quản trị viên');
-            } else {
-                return redirect()->route('trang-chu')->with('thongbao', 'Đăng nhập thành công');
-            } 
+     
+        if (Auth::attempt(['email' => $request->username, 'password' => $request->pass])) {
+            if(Auth::check())
+            {
+                if(Auth::user()->role == 1)
+                    return redirect('admin/theloai/danhsach');
+                else
+                    return redirect('trangchu');
+            }
 
             }else {
                 Auth::logout();
@@ -188,5 +191,90 @@ class UserController extends Controller
     public function getDangXuatAdmin(){
         Auth::logout();
         return redirect()->route('trang-chu')->with('thongbao','Bạn đã đăng xuất!');
+    }
+
+    public function getDMK(){
+        return view('viewer.page.doimatkhau');
+    }
+
+    public function postDMK(Request $request){
+        $this->validate($request,[
+            'newpass'=>'required',
+            'newpassagain'=>'required|same:newpass',
+        ],[
+            'newpass.required'=>'Bạn chưa nhập mật khẩu mới',
+            'newpassagain.required'=>'Bạn chưa nhập xác thực mật khẩu',
+            'newpassagain.same'=>'Xác nhận mật khẩu không đúng'
+        ]);
+
+        $user = Auth::user();
+        
+        $user->password =bcrypt($request->newpass);
+        $user->save();
+        return back()->with('thongbao', 'Đổi mật khẩu thành công');
+    }
+
+    public function getDangXuat(){
+        Auth::logout();
+        return redirect('login');
+    }
+
+    public function getDangKi(){
+        return view('viewer.page.dangki');
+    }
+
+    public function postDangki(Request $request){
+        $this->validate($request,[
+            'hoten'=>'required',
+            'mail'=>'required|',
+            'pass'=>'required',
+            'sdt'=>'required',
+            'diachi'=>'required',
+            'anh'=>'required',
+            'passagain'=>'required|same:pass',
+        ],[
+            'hoten.required'=>'Hãy nhập họ tên',
+            'mail.required'=>'Hãy nhập Email',
+            'pass.required'=>'Hãy nhập mật khẩu',
+            'sdt.required'=>'Hãy nhập số điện thoại',
+            'diachi.required'=>'Hãy nhập địa chỉ',
+            'anh.required'=>'Hãy nhập ảnh',
+            'passagain.required'=>'Bạn chưa nhập xác thực mật khẩu',
+            'passagain.same'=>'Xác nhận mật khẩu không đúng'
+        ]);
+
+        $user = new User;
+        $user->name = $request->hoten;
+        $user->fullname = $request->hoten;
+        $user->sex = 1;
+        $user->email = $request->mail;
+        $user->role  = 2;
+        $user->phone = $request->sdt;
+        $user->diachi = $request->diachi;
+        $user->password = bcrypt($request->pass);
+        
+        if($request->hasFile('anh')){ 
+            $file = $request-> file('anh');
+           
+            $duoi = $file->getClientOriginalExtension();
+            
+            if($duoi != 'jpg' && $duoi !='png'  && $duoi != 'jpeg'){
+                return back()->with('saifile','Bạn chỉ được chọn file có đuôi jpg,png,jpeg! ');
+            }
+            ;
+            // $file = $request->file('sanpham');
+            $name = $file->getClientOriginalName();
+            $hinh = str_random(4)."_".$name;
+            
+            while(file_exists("upload/avatar/".$hinh)){
+                $hinh = str_random(4)."_".$name;
+            }
+            $file->move("upload/avatar",$hinh);
+            // unlink("upload/sanpham/".$sanpham->hinhanh);
+            $user->avatar = $hinh;
+          
+        }
+        $user->save();
+        return back()->with('thongbao','Đăng kí tài khoản thành công');
     }
 }
