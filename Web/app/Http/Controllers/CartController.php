@@ -36,4 +36,8 @@ class CartController extends Controller
         $total = Cart::total();
         return view('viewer.giohang.dathang',['data'=>$data,'total'=>$total]);
     }
+
+    public function getUpdateCart(Request $request){
+        Cart::update($request->rowId,$request->qty);
+    }
 }

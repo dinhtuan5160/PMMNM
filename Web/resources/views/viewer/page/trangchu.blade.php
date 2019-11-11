@@ -12,8 +12,8 @@
                    <div class="row">
                        <div class="col-12">
                            <div class="slider_content">
-                                <h1> Pendant <br> Collection 2019</h1>
-                               <p>consectetur adipisicing elit. Itaque dolorem, aliquam quos. Molestias dolorum explicabo totam illum itaque sit </p>
+                                <h1>Shop Rusu <br>  2019</h1>
+                               <p>Nhân dịp kỉ niệm 2 năm thành lập Shop </p>
                                 <a class="button" href="shop.html">SHOPPING NOW</a>
                             </div>
                        </div>
@@ -73,32 +73,39 @@
                                 <article class="single_product">
                                         <figure>
                                            <div class="product_name">
-                                               <h4><a href="product-details.html">{{$dt_moinhat->ten}} - {{$dt_moinhat->bonhotrong->ten}}</a></h4>
+                                               <h4><a href="chitiet/{{$dt_moinhat->id}}">{{$dt_moinhat->ten}} - {{$dt_moinhat->bonhotrong->ten}}</a></h4>
                                            </div>
                                            <div class="product_rating">
                                                
                                            </div>
 
                                             <div class="product_thumb">
-                                                <a class="primary_img" href="product-details.html"><img src="image/{{$dt_moinhat->hinhanh}}" alt=""></a>
+                                                <a class="primary_img" href="chitiet/{{$dt_moinhat->id}}"><img src="image/{{$dt_moinhat->hinhanh}}" alt=""></a>
                                                 <div class="label_product">
-                                                    <span class="label_sale">Sale!</span>
+                                                    @if($dt_moinhat->gia_sale != 0)
+                                                        <span class="label_sale">Sale!</span>
+                                                    @endif
                                                 </div>
                                                 <div class="quick_button">
                                                     <a href="#" data-toggle="modal" data-target="#modal_box"  title="Xem nhanh"> Xem nhanh</a>
                                                 </div>
                                             </div>
                                             <div class="product_footer">
-                                                <div class="price_box"> 
-                                                    
-                                                    <span class="current_price">{{number_format($dt_moinhat->gia)}}<sup>đ</sup></span>&nbsp
-                                                    <span class="current_price" style="margin-left: 10px; color:red;">{{$dt_moinhat->gia}} lượt yêu thích</span>
+                                                <div class="price_box" style="text-align:center"> 
+                                                    @if($dt_moinhat->gia_sale != 0)
+                                                        <span class="old_price">{{number_format($dt_moinhat->gia)}}<sup>đ</sup></span> 
+                                                        
+                                                        <span class="current_price">{{number_format($dt_moinhat->gia_sale)}}<sup>đ</sup></span>&nbsp
+                                                    @else
+                                                        <span class="current_price" >{{number_format($dt_moinhat->gia)}}<sup>đ</sup></span>&nbsp
+                                                    @endif
+                                                   
                                                 </div>
                                                 <div class="action_links">
                                                      <ul>
                                                         <li class="add_to_cart"><a href="{{route('add-cart',$dt_moinhat->id)}}" title="Chọn mua">Thêm vào giỏ hàng</a></li>
 
-                                                        <li class="wishlist"><a href="wishlist.html"  title="Yêu thích"><i class="ion-android-favorite-outline"></i></a></li>
+                                                       
 
                                                        
                                                     </ul>
@@ -146,7 +153,9 @@
                                             <div class="product_thumb">
                                                 <a class="primary_img" href="product-details.html"><img src="asset/assets/img/product/product11.jpg" alt=""></a>
                                                 <div class="label_product">
-                                                    <span class="label_sale">Sale!</span>
+                                                    @if($dt_moinhat->gia_sale == 0)
+                                                        <span class="label_sale">Sale!</span>
+                                                    @endif
                                                 </div>
                                                 <div class="quick_button">
                                                     <a href="#" data-toggle="modal" data-target="#modal_box"  title="Xem nhanh"> Quick View</a>
@@ -1826,16 +1835,21 @@
                                                 </div>
                                             </div>
                                             <div class="product_footer">
-                                                <div class="price_box"> 
+                                                <div class="price_box" style="text-align:center"> 
                                                     
-                                                    <span class="current_price">{{number_format($dt_pinkhung->gia)}}<sup>đ</sup></span>&nbsp
-                                                    <span class="current_price" style="margin-left: 10px; color:red;">{{$dt_pinkhung->gia}} lượt yêu thích</span>
+                                                    @if($dt_pinkhung->gia_sale != 0)
+                                                        <span class="old_price">{{number_format($dt_pinkhung->gia)}}<sup>đ</sup></span> 
+                                                        
+                                                        <span class="current_price">{{number_format($dt_pinkhung->gia_sale)}}<sup>đ</sup></span>&nbsp
+                                                    @else
+                                                        <span class="current_price">{{number_format($dt_pinkhung->gia)}}<sup>đ</sup></span>&nbsp
+                                                    @endif
                                                 </div>
                                                 <div class="action_links">
                                                      <ul>
                                                         <li class="add_to_cart"><a href="{{route('add-cart',$dt_pinkhung->id)}}" title="Chọn mua">Thêm vào giỏ hàng</a></li>
 
-                                                        <li class="wishlist"><a href="wishlist.html"  title="Yêu thích"><i class="ion-android-favorite-outline"></i></a></li>
+                                                        
 
                                                        
                                                     </ul>
@@ -2518,13 +2532,6 @@
     </div>
     <!--product area end-->
     
-    <!--Categories product area start-->
-    
-    <!--Categories product area end-->
-    
-    <!--product area start-->
-    
-    <!--product area end-->
 
     <!--shipping area start-->
     <div class="shipping_area shipping_two mb-50 mt-50">
@@ -2536,8 +2543,8 @@
                             <img src="asset/assets/img/about/shipping1.png" alt="">
                         </div>
                         <div class="shipping_content">
-                            <h4>Free Delivery</h4>
-                            <p>Free shipping on all order</p>
+                            <h4>Miễn phí vận chuyển</h4>
+                            <p>Giảm 40% cho hóa đơn có giá trị trên 20 triệu đồng</p>
                         </div>
                     </div>
                 </div>
@@ -2547,8 +2554,8 @@
                             <img src="asset/assets/img/about/shipping2.png" alt="">
                         </div>
                         <div class="shipping_content">
-                            <h4>Online Support 24/7</h4>
-                            <p>Support online 24 hours a day</p>
+                            <h4>Hỗ trợ 24/7</h4>
+                            <p>Hỗ trợ 24 giờ trên ngày</p>
                         </div>
                     </div>
                 </div>
@@ -2558,8 +2565,8 @@
                             <img src="asset/assets/img/about/shipping3.png" alt="">
                         </div>
                         <div class="shipping_content">
-                            <h4>Money Return</h4>
-                            <p>Back guarantee under 7 days</p>
+                            <h4>Trả tiền</h4>
+                            <p>Đảm bảo hoàn lại tiền nếu sản phẩm gặp vấn đề sau 7 ngày</p>
                         </div>
                     </div>
                 </div>
@@ -2569,8 +2576,8 @@
                             <img src="asset/assets/img/about/shipping4.png" alt="">
                         </div>
                         <div class="shipping_content">
-                            <h4>Member Discount</h4>
-                            <p>Onevery order over $120.00</p>
+                            <h4>Giảm giá thành viên</h4>
+                            <p>Giảm giá 10% cho khách hàng là thành viên trên 2 năm</p>
                         </div>
                     </div>
                 </div>

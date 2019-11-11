@@ -147,6 +147,8 @@ Route::get('trangchu','PageController@getTrangChu')->name('trang-chu');
 
 Route::get('theloai/{id}','TheLoaiController@getViewerDanhSach');
 
+Route::get('chitiet/{id}','PageController@getChiTiet');
+
 Route::group(['prefix'=>'cart'],function(){
 	Route::get('add/{id}','CartController@getAddCart')->name('add-cart');
 
@@ -155,4 +157,6 @@ Route::group(['prefix'=>'cart'],function(){
 	Route::get('show','CartController@getShowCart')->name('show-cart');
 
 	Route::get('dathang','CartController@getDatHang')->name('dat-hang');
+
+	Route::get('update','CartController@getUpdateCart');
 });

@@ -16,6 +16,14 @@ class PageController extends Controller
 
     	return view('viewer.page.trangchu',['dts_moinhat'=>$dts_moinhat,'dts_pinkhung'=>$dts_pinkhung]);
     }
+
+    public function getChiTiet($id){
+
+        $sanpham = SanPham::find($id);
+
+        $splqs = SanPham::where('id_theloai',$sanpham->id_theloai)->where('trangthai',1)->get();
+        return view('viewer.page.chitiet',['sanpham'=>$sanpham,'splqs'=>$splqs]);
+    }
 }
 
 ?>

@@ -3,6 +3,18 @@
   <title>Đặt mua hàng</title>
 @endsection
 @section('content')
+<script type="text/javascript">
+    function updateCart(qty,rowId){
+        $.get(
+				'{{asset('cart/update')}}',
+				{qty:qty,rowId:rowId},
+				function(){
+					location.reload();
+				}
+				);
+
+    }
+</script>
 <!--breadcrumbs area start-->
 <div class="breadcrumbs_area mt-45">
         <div class="container">   
@@ -46,7 +58,7 @@
                                     <td class="product_thumb"><a href="#"><img src="upload/sanpham/{{$dt->options->img}}" alt=""></a></td>
                                     <td class="product_name"><a href="#">{{$dt->name}}</a></td>
                                     <td class="product-price">{{number_format($dt->price)}}<sup>đ</sup></td>
-                                    <td class="product_quantity"><label>Số lượng</label> <input min="1" max="100" value="{{$dt->qty}}" type="number"></td>
+                                    <td class="product_quantity"><label>Số lượng</label> <input min="1" max="100" value="{{$dt->qty}}" type="number" onchange="updateCart(this.value,'{{$dt->rowId}}')"></td>
                                     <td class="product_total">{{number_format($dt->price*$dt->qty)}}<sup>đ</sup></td>
 
 

@@ -6313,6 +6313,19 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   text-transform: capitalize;
   min-width: 270px;
 }
+.product_variant.quantity a:hover {
+  background: #3E444A;
+}
+.product_variant.quantity a {
+  border: 0;
+  font-size: 16px;
+  margin-left: 20px;
+  background: #2e6ed5;
+  height: 42px;
+  line-height: 42px;
+  text-transform: capitalize;
+  min-width: 270px;
+}
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .product_variant.quantity button {
     min-width: 240px;
