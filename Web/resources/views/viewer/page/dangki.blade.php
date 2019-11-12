@@ -1,6 +1,6 @@
 @extends('viewer.layout.index')
 @section('title')
-  <title>Đặt mua hàng</title>
+  <title>Đăng kí</title>
 @endsection
 @section('content')
     <div class="customer_login mt-45">
@@ -11,6 +11,7 @@
                     <div class="account_form login">
                         
                         <form action="{{route('post-dk')}}" method="post" enctype="multipart/form-data">
+                        <h3>Đăng kí</h3>
                             @CSRF
                             <p>
                             @if(count($errors) > 0)

@@ -176,3 +176,5 @@ Route::get('logout','UserController@getDangXuat');
 Route::get('dangki','UserController@getDangKi')->name('get-dk');
 
 Route::post("dangkimoi",'UserController@postDangKi')->name('post-dk');
+
+Route::get('timkiem','PageController@getTim')->name('tk');

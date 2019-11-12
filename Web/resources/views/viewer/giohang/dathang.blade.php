@@ -17,8 +17,8 @@
                 <div class="col-12">
                     <div class="breadcrumb_content">
                         <ul>
-                            <li><a href="index.html">home</a></li>
-                            <li>Checkout</li>
+                            <li><a href="trangchu">Trang chủ</a></li>
+                            <li>Đặt hàng</li>
                         </ul>
                     </div>
                 </div>

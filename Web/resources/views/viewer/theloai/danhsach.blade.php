@@ -74,7 +74,7 @@
                     </article> 
                 </div>
                 @endforeach
-                <div class="row" style="text-align:center;">
+                <div class="row" style="text-align:center;margin-left:525px;">
                     {{$dts_theloai->links()}}
                 </div>
             </div>

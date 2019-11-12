@@ -331,10 +331,10 @@
                         <div class="col-lg-9 col-md-6">
                             <div class="bottom_right">
                                 <div class="search_container">
-                                   <form action="#">
+                                   <form action="{{route('tk')}}" method="get">
                                        
                                         <div class="search_box">
-                                            <input placeholder="Search product..." type="text">
+                                            <input placeholder="Tìm điện thoại..." type="text" name="key">
                                             <button type="submit">Tìm kiếm</button> 
                                         </div>
                                     </form>
