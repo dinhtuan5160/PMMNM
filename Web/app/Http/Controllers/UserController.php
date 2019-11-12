@@ -216,7 +216,7 @@ class UserController extends Controller
 
     public function getDangXuat(){
         Auth::logout();
-        return redirect('login');
+        return redirect('trangchu');
     }
 
     public function getDangKi(){
@@ -230,7 +230,7 @@ class UserController extends Controller
             'pass'=>'required',
             'sdt'=>'required',
             'diachi'=>'required',
-            'anh'=>'required',
+            // 'anh'=>'required',
             'passagain'=>'required|same:pass',
         ],[
             'hoten.required'=>'Hãy nhập họ tên',
@@ -238,7 +238,7 @@ class UserController extends Controller
             'pass.required'=>'Hãy nhập mật khẩu',
             'sdt.required'=>'Hãy nhập số điện thoại',
             'diachi.required'=>'Hãy nhập địa chỉ',
-            'anh.required'=>'Hãy nhập ảnh',
+            // 'anh.required'=>'Hãy nhập ảnh',
             'passagain.required'=>'Bạn chưa nhập xác thực mật khẩu',
             'passagain.same'=>'Xác nhận mật khẩu không đúng'
         ]);

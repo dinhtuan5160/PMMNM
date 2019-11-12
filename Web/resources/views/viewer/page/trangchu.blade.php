@@ -13,8 +13,8 @@
                        <div class="col-12">
                            <div class="slider_content">
                                 <h1>Shop Rusu <br>  2019</h1>
-                               <p>Nhân dịp kỉ niệm 2 năm thành lập Shop </p>
-                                <a class="button" href="shop.html">SHOPPING NOW</a>
+                               <p style="font-size: 20px">Nhân dịp kỉ niệm 2 năm thành lập Shop </p>
+                                <a class="button" href="{{route('trang-chu')}}">MUA NGAY</a>
                             </div>
                        </div>
                    </div>
@@ -86,9 +86,9 @@
                                                         <span class="label_sale">Sale!</span>
                                                     @endif
                                                 </div>
-                                                <div class="quick_button">
+                                                <!-- <div class="quick_button">
                                                     <a href="#" data-toggle="modal" data-target="#modal_box"  title="Xem nhanh"> Xem nhanh</a>
-                                                </div>
+                                                </div> -->
                                             </div>
                                             <div class="product_footer">
                                                 <div class="price_box" style="text-align:center"> 
@@ -164,9 +164,9 @@
                                                         <span class="label_sale">Sale!</span>
                                                     @endif
                                                 </div>
-                                                <div class="quick_button">
+                                                <!-- <div class="quick_button">
                                                     <a href="#" data-toggle="modal" data-target="#modal_box"  title="Xem nhanh"> Xem nhanh</a>
-                                                </div>
+                                                </div> -->
                                             </div>
                                             <div class="product_footer">
                                                 <div class="price_box" style="text-align:center"> 
@@ -239,9 +239,9 @@
                                                 <div class="label_product">
                                                     <span class="label_sale">Sale!</span>
                                                 </div>
-                                                <div class="quick_button">
+                                                <!-- <div class="quick_button">
                                                     <a href="#" data-toggle="modal" data-target="#modal_box"  title="quick view"> Xem nhanh</a>
-                                                </div>
+                                                </div> -->
                                             </div>
                                             <div class="product_footer">
                                                 <div class="price_box" style="text-align:center"> 

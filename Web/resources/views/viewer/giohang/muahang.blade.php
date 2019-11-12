@@ -22,9 +22,12 @@
                 <div class="col-12">
                     <div class="breadcrumb_content">
                         <ul>
-                            <li><a href="index.html">home</a></li>
-                            <li>Shopping Cart</li>
+                            <li><a href="{{route('trang-chu')}}">Trang chủ</a></li>
+                            <li>Giỏ hàng</li>
                         </ul>
+                    </div>
+                    <div>
+                        <span style="font-size: 20px; color:blue"><a href="{{route('trang-chu')}}"> Quay lại</a></span>
                     </div>
                 </div>
             </div>
@@ -67,9 +70,9 @@
                             </tbody>
                         </table>   
                             </div>  
-                            <div class="cart_submit">
+                            <!-- <div class="cart_submit">
                                 <button type="submit">Cập nhật giỏ hàng</button>
-                            </div>      
+                            </div>       -->
                         </div>
                      </div>
                  </div>

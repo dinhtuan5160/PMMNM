@@ -39,7 +39,7 @@
                         <div class="header_account bottom">
                             <ul>
                                 <li class="wishlist"><a href="{{ route('quantri') }}"><i class="icon ion-clipboard"></i> Quản trị </a></li>
-                                <li class="top_links"><a href="#"><i class="ion-gear-a"></i> Setting <i class="ion-chevron-down"></i></a>
+                                <li class="top_links"><a href="#"><i class="ion-gear-a"></i> Cài đặt <i class="ion-chevron-down"></i></a>
                                     <ul class="dropdown_links">
                                         <li><a href="checkout.html">Checkout </a></li>
                                         <li><a href="my-account.html">My Account </a></li>
@@ -242,7 +242,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-4 col-md-4">
                             <div class="header_account">
-                               Trường đại học công nghiệp Hà Nội - Nhóm 1
+                               Trường ĐH công nghiệp Hà Nội -KTPM1 - K11- Nhóm 1
                             </div>
                         </div>
                         <div class="col-lg-8 col-md-9">
@@ -254,7 +254,7 @@
                                     <ul>
                                         
                                         
-                                        <li class="top_links"><a href="#"><i class="ion-gear-a"></i> Setting <i class="ion-chevron-down"></i></a>
+                                        <li class="top_links"><a><i class="ion-gear-a"></i> Cài đặt <i class="ion-chevron-down"></i></a>
                                             <ul class="dropdown_links">
                                                 @if(Auth::check())
                                                 @if(Auth::user()->role==1)
@@ -294,7 +294,7 @@
                                         <li><a class="active"  href="trangchu">Home</a>
                                             
                                         </li>
-                                        <li><a href="contact.html"> Liên hệ chúng tôi</a></li>
+                                        <li><a href="{{route('contact')}}"> Liên hệ chúng tôi</a></li>
                                     </ul>  
                                 </nav> 
                             </div>
@@ -318,12 +318,12 @@
                                         @foreach($the_loais as $the_loai)
                                         <li><a href="theloai/{{$the_loai->id}}">{{$the_loai->ten}}</a></li>
                                         @endforeach
-                                        <li id="cat_toggle" class="has-sub"><a href="#"> More Categories</a>
+                                        <!-- <li id="cat_toggle" class="has-sub"><a href="#"> More Categories</a>
                                             <ul class="categorie_sub">
                                                 <li><a href="#">Hide Categories</a></li>
                                             </ul>   
 
-                                        </li>
+                                        </li> -->
                                     </ul>
                                 </div>
                             </div>

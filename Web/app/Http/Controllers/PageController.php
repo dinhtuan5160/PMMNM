@@ -34,6 +34,11 @@ class PageController extends Controller
         $name = $request->key;
         return view('viewer.page.timkiem',['sptks'=>$sptks,'name'=>$name]);
     }
+
+    public function getContact(){
+
+        return view('viewer.page.contact');
+    }
 }
 
 ?>

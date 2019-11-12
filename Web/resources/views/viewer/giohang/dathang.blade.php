@@ -79,7 +79,7 @@
                                     </div>    
                                 </div>     	    	    	    	    	    	    
                             </div>
-                            <button type="submit" class="btn btn-success" style="margin-left:550px;margin-top:50px;">Đặt hàng</button>
+                            <button type="submit" class="btn btn-success" style="margin-top:50px;">Đặt hàng</button>
                         </form>    
                     </div>
                     <div class="col-lg-6 col-md-6">

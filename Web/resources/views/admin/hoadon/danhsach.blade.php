@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Thể loại
+                <h1 class="page-header">Hóa đơn
                     <small>danh sách</small>
                 </h1>
             </div>
@@ -21,6 +21,7 @@
             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                 <thead>
                     <tr align="center">
+                        <th>STT</th>
                         <th>Người mua</th>
                         <th>Email</th>
                         <th>Tổng tiền</th>
@@ -34,6 +35,7 @@
                 <tbody>
                     @foreach($hoadon as $hd)
                     <tr class="odd gradeX" align="center">
+                        <td>{{$hd->id}}</td>
                         <td>{{ $hd->ten }}</td>
                         <td>
                         {{ $hd->User->email }}

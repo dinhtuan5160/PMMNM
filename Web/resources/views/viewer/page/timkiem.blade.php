@@ -68,9 +68,9 @@
                                                         <span class="label_sale">Sale!</span>
                                                     @endif
                                                 </div>
-                                                <div class="quick_button">
+                                                <!-- <div class="quick_button">
                                                     <a href="#" data-toggle="modal" data-target="#modal_box"  title="Xem nhanh"> Xem nhanh</a>
-                                                </div>
+                                                </div> -->
                                             </div>
                                             <div class="product_footer">
                                                 <div class="price_box" style="text-align:center"> 
