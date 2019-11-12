@@ -81,4 +81,16 @@ class CartController extends Controller
     public function getUpdateCart(Request $request){
         Cart::update($request->rowId,$request->qty);
     }
+
+    public function getDanhSachHD(){
+        $hoadon = HoaDon::all();
+        return view('admin.hoadon.danhsach',compact('hoadon'));
+    }
+
+    public function getXoa($id){
+        $hoadon = HoaDon::find($id);
+        $hoadon->trangthai = 1;
+        $hoadon->save();
+        return back()->with('thongbao','Thanh toán thành công');
+    }
 }

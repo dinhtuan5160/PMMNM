@@ -54,19 +54,19 @@ Route::group(['prefix'=>'admin'],function(){
 
 	Route::group(['prefix'=>'hoadon'],function(){
 		// admin/sanpham/danhsach
-		Route::get('danhsach','HoaDonController@getDanhSach')->name('quan-tri');
+		Route::get('danhsach','CartController@getDanhSachHD')->name('quan-tri');
 
 		// Route::get('sua/{id}','HoaDonController@getSua');
 		// Route::post('sua/{id}','HoaDonController@postSua');
 
-		Route::get('xoa/{id}','HoaDonController@getXoa');	
+		Route::get('xoa/{id}','CartController@getXoa');	
 	});
 
 
 	Route::group(['prefix'=>'comment'],function(){
 		// admin/sanpham/danhsach
 
-		Route::get('xoa/{id}/{idSanPham}','CommentController@getXoa');	
+		Route::get('xoa/{id}','CommentController@getXoa');	
 	});
 	// Route::group(['prefix'=>'ajax'],function(){
 	// 		Route::get('ajax/loaisanpham/{id_theloai}','AjaxController@getLoaiSanPham'); 	
